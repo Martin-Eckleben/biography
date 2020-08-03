@@ -3,7 +3,21 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "paths": {
+      "@component/*": ["./src/app/component/*"],
+      "@configuration/*": ["./src/app/configuration/*"],
+      "@interface/*": ["./src/app/interface/*"],
+      "@service/*": ["./src/app/service/*"],
+      "@type/*": ["./src/app/type/*"],
+      "@model/*": ["./src/app/model/*"],
+      "@modal/*": ["./src/app/modal/*"],
+      "@directive/*": ["./src/app/directive/*"],
+      "@enum/*": ["./src/app/enum/*"],
+      "@pipe/*": ["./src/app/pipes/*"],
+      "@environments/*": ["./environments/*"],
+      "@base/*": [".*"],
+    },
   },
   "files": [
     "src/main.ts",
