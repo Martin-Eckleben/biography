@@ -1,0 +1,33 @@
+.logo {
+  background-image: url('../../../assets/images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 120px;
+  height: 120px;
+  margin-top: -25px;
+  margin-right: 30px;
+  cursor: pointer;
+}
+
+@media @smartphone {
+
+  .mobile-logo-wrapper{
+    position: absolute;
+    top: 40px;
+    height: 55px;
+    width: 100%;
+    z-index: @zindex_logo;
+    background: rgba(0,0,0,.5);  
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    margin-top: 20px;
+    position: absolute;
+    left: 17px;
+    bottom: -25px;
+    z-index: @zindex_logo;
+  }
+}

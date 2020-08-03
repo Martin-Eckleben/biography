@@ -1,1 +1,42 @@
-<p>navigation works!</p>
+<!-- Desktop -->
+<div fxHide.lt-lg="true" class="wrapper">
+
+    <!-- positioned absolute -->
+    <div class="logowrapperDesktop">
+      <app-logo></app-logo>
+    </div>
+  
+    <div class="navbtnsDesktop" fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex="noshrink" *ngFor="let item of navigationItems">
+        <app-navigation-button [navigationItem]="item" theme="light"></app-navigation-button>
+      </div>
+  
+      <div fxFlex="grow" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="10px"
+      class="margin-right">
+        <app-notificationbell *ngIf="userService.isLoggedIn"></app-notificationbell>
+        <app-login></app-login>
+      </div>
+    </div>
+  
+  </div>
+  
+  <!-- Mobile -->
+  <div fxHide.gt-md="true" fxLayout="column" class="wrapper">
+  
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <app-login></app-login>
+    </div>
+  
+    <div fxLayout="column" fxLayoutGap="10px" style="margin-top: 30px;">
+      <app-navigation-button *ngFor="let item of navigationItems" [navigationItem]="item" theme="light"></app-navigation-button>
+    </div>
+  
+    <div class="mobile-logout" *ngIf="userService.isLoggedIn" (click)="logout()" fxLayout="row" fxLayoutAlign="start center">
+      <div>
+        <i class="fal fa-2x fa-sign-out"></i>
+      </div>
+      <div>
+        <span>Logout</span>
+      </div>
+    </div>
+  </div>
